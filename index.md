@@ -5,7 +5,7 @@ hide: true
 show_reading_time: false
 ---
 
-Hi! My name is Noah Dabrowks
+Hi! My name is Noah Dabrowkski
 
 ### Development Environment
 
