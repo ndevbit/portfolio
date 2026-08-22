@@ -4,8 +4,8 @@
 # title: Your awesome title
 #
 # author:
-#   name: WaterAddict-005DA8FF
-#   email: digitalNoz28@gmail.com
+#   name: GitHub User
+#   email: your-email@domain.com
 #
 # The `>` after `description:` means to ignore line-breaks until next key. If
 #   you wish to omit the line-break after the end of text, use `>-` instead.
@@ -16,8 +16,8 @@
 
 title: Open Coding 
 description: "Class of 2026"
-owner_name: Noah Dabrowski
-github_username: WaterAddict-005DA8FF
+owner_name: John Mortensen
+github_username: jm1021 
 github_repo: "portfolio" 
 baseurl: "/portfolio" 
 future: true
