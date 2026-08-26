@@ -5,7 +5,7 @@ hide: true
 show_reading_time: false
 ---
 
-Hi! My name is Noah Dabrowski
+Hi! My name is Noah Dabrowski and I love to play soccer. 
 
 ### Development Environment
 
