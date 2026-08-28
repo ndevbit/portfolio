@@ -5,12 +5,24 @@ permalink: /about/
 comments: true
 ---
 
-## As a conversation Starter
+### Coding progression
 
-Here are some places I have lived.
+MODIFICATION
+
+I started with scratch many years ago, where I remained for around 3 years.
+There where sprinkles of JavaScript and Luau, but Scratch was the dominant coding language for me.
+
+Eventually I moved on to C, and then Armv7 assembly.
+I had a lot of fun with the Armv7 assembly, and it taught me alot about the inner workings of computers.
+
+That about encompasses my experience in coding so far, minus a few projects here and there.
+
+## Important places for me
+
+Here are the 2 U.S. states I know where significant to my life.
 
 <comment>
-Flags are made using Wikipedia images
+Flags are from Wikipedia images
 </comment>
 
 <style>
@@ -56,53 +68,53 @@ Flags are made using Wikipedia images
 <script>
     var GRID_CONTAINER = document.getElementById("grid_container");
 
-    var container = document.createElement("div");
-    container.id = "container";
+    var FLAGS = [
+        {
+            Name: "California", 
+            Flag_Img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/1920px-Flag_of_California.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20251109150536"
+        },
+        {
+            Name: "Arizona",
+            Flag_Img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arizona.svg/1920px-Flag_of_Arizona.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20260122002829"
+        }
+    ];
 
-    container.style.border = "2px dashed";
-    container.style.padding = "8px";
+    var FLAG_COUNT = 2;
 
-    container.textContent = "Sigma";
+    GRID_CONTAINER.style.border = "2px dashed";
+    GRID_CONTAINER.style.padding = "8px";
+    // GRID_CONTAINER.style.width = "512px";
+    GRID_CONTAINER.style.height = "512px";
 
+    GRID_CONTAINER.style.display = "grid";
+    GRID_CONTAINER.style.gridTemplateColumns = "auto auto";
+    GRID_CONTAINER.style.gridTemplateRows = "256px";
+
+    for (var i = 0; i < FLAG_COUNT; i++) {
+        var placeContainer = document.createElement("div");
+        placeContainer.style.border = "2px dashed";
+        placeContainer.style.padding = "8px"
+
+        placeContainer.id = "placeContainer";
+
+        var flagImage = document.createElement("img");
+        flagImage.src = FLAGS[i].Flag_Img;
+        flagImage.alt = FLAGS[i].Name;
+        flagImage.objectFit = "contain";
+        flagImage.style.width = "100%";
+        flagImage.style.height = "90%";
+
+        placeContainer.appendChild(flagImage);
+
+        var textDiv = document.createElement("p");
+        textDiv.style.textAlign = "center";
+        textDiv.textContent = FLAGS[i].Name;
+
+        placeContainer.appendChild(textDiv);
+
+        GRID_CONTAINER.appendChild(placeContainer);
+    }
+
+    // Add containter to output 
     GRID_CONTAINER.appendChild(container);
 </script>
-
-### Journey through Life
-
-Here is what I did at those places
-
-- 🏫 Lots of Elementary Schools in Tucson, LA, Honolulu, and Glendale (CA)
-- 🏫 Middle and High School in Glendale (CA), Hoover High graduated '77
-- 🎓 Glendale CA Community College, UCLA Extension, LA Wilshire Computer Tech School '77 to '79
-- ⛪ England, London Missionary for Church of Jesus Christ of Latter-day Saints '79 to '81
-- 💼 Culver City, Glendale CA founder at Ashton-Tate, original PC's dBase 2 and 3 '82 to '87
-- 🎓 Eugene Oregon Undergraduate CompSci Degree at University of Oregon (Go Ducks!) '89 to '91
-- 💼 Eugene Oregon, founder and owner @ Microniche `88, Point Control CAD CAM developer '91 to '96
-- 🏢 San Diego CA Qualcomm, Satellite Comm and 1st Mobile OS (BREW) '96 to '19
-- 👨‍🏫 San Diego CA Teacher of Computer Science @ Del Norte High School San Diego '19 to present
-
-### Culture, Family, and Fun
-
-Everything for me, as for many others, revolves around family and faith.
-
-- My mother told me that I was Danish, English. and Irish, here is my researched [family tree]({{site.baseurl}}/images/about/familytree.png)
-- My family is pretty big as I have been married twice, my 1st wife passed away.  We have had 5 kids, 4 adopted by me, 1 biological.  Plus, there are three grandkids.  My name to my grandkids is Abuilito.
-- The gallery of pics has some of my family, fun, culture and faith memories.
-
-<comment>
-Gallery of Pics, scroll to the right for more ...
-</comment>
-<div class="image-gallery">
-  <img src="{{site.baseurl}}/images/about/missionary.jpg" alt="Image 1">
-  <img src="{{site.baseurl}}/images/about/john_tamara.jpg" alt="Image 2">
-  <img src="{{site.baseurl}}/images/about/tamara_fam.jpg" alt="Image 3">
-  <img src="{{site.baseurl}}/images/about/surf.jpg" alt="Image 4">
-  <img src="{{site.baseurl}}/images/about/john_lora.jpg" alt="Image 5">
-  <img src="{{site.baseurl}}/images/about/lora_fam.jpg" alt="Image 6">
-  <img src="{{site.baseurl}}/images/about/lora_fam2.jpg" alt="Image 7">
-  <img src="{{site.baseurl}}/images/about/pj_party.jpg" alt="Image 8">
-  <img src="{{site.baseurl}}/images/about/trent_family.png" alt="Image 9">
-  <img src="{{site.baseurl}}/images/about/claire.jpg" alt="Image 10">
-  <img src="{{site.baseurl}}/images/about/grandkids.jpg" alt="Image 11">
-  <img src="{{site.baseurl}}/images/about/farm.jpg" alt="Image 12">
-</div>
