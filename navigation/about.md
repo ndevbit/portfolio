@@ -7,8 +7,6 @@ comments: true
 
 ### Coding progression
 
-MODIFICATION
-
 I started with scratch many years ago, where I remained for around 3 years.
 There where sprinkles of JavaScript and Luau, but Scratch was the dominant coding language for me.
 
@@ -118,3 +116,11 @@ Flags are from Wikipedia images
     // Add containter to output 
     GRID_CONTAINER.appendChild(container);
 </script>
+
+<comment>
+This is a project I worked on in blender, a 3d modeling software
+</comment>
+
+<div .class = "image-gallery">
+<img .src = "C:\Users\digit\OneDrive\Pictures\Screenshots 1\Screenshot 2026-07-05 211048.png"></img>
+</div>
