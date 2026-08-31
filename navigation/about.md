@@ -5,22 +5,12 @@ permalink: /about/
 comments: true
 ---
 
-### Coding progression
+## As a conversation Starter
 
-I started with scratch many years ago, where I remained for around 3 years.
-There where sprinkles of JavaScript and Luau, but Scratch was the dominant coding language for me.
-
-Eventually I moved on to C, and then Armv7 assembly.
-I had a lot of fun with the Armv7 assembly, and it taught me alot about the inner workings of computers.
-
-That about encompasses my experience in coding so far, minus a few projects here and there.
-
-## Important places for me
-
-Here are the 2 U.S. states I know where significant to my life.
+Here are some places I have lived.
 
 <comment>
-Flags are from Wikipedia images
+Flags are made using Wikipedia images
 </comment>
 
 <style>
@@ -64,63 +54,85 @@ Flags are from Wikipedia images
 </div>
 
 <script>
-    var GRID_CONTAINER = document.getElementById("grid_container");
+    // 1. Make a connection to the HTML container defined in the HTML div
+    var container = document.getElementById("grid_container"); // This container connects to the HTML div
 
-    var FLAGS = [
-        {
-            Name: "California", 
-            Flag_Img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_California.svg/1920px-Flag_of_California.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20251109150536"
-        },
-        {
-            Name: "Arizona",
-            Flag_Img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Flag_of_Arizona.svg/1920px-Flag_of_Arizona.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20260122002829"
-        }
+    // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
+    var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
+    var living_in_the_world = [
+        {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California - forever"},
+        {"flag": "b/b9/Flag_of_Oregon.svg", "greeting": "Hi", "description": "Oregon - 9 years"},
+        {"flag": "b/be/Flag_of_England.svg", "greeting": "Alright mate", "description": "England - 2 years"},
+        {"flag": "e/ef/Flag_of_Hawaii.svg", "greeting": "Aloha", "description": "Hawaii - 2 years"},
     ];
 
-    var FLAG_COUNT = 2;
+    // 3a. Consider how to update style count for size of container
+    // The grid-template-columns has been defined as dynamic with auto-fill and minmax
 
-    GRID_CONTAINER.style.border = "2px dashed";
-    GRID_CONTAINER.style.padding = "8px";
-    // GRID_CONTAINER.style.width = "512px";
-    GRID_CONTAINER.style.height = "512px";
+    // 3b. Build grid items inside of our container for each row of data
+    for (const location of living_in_the_world) {
+        // Create a "div" with "class grid-item" for each row
+        var gridItem = document.createElement("div");
+        gridItem.className = "grid-item";  // This class name connects the gridItem to the CSS style elements
+        // Add "img" HTML tag for the flag
+        var img = document.createElement("img");
+        img.src = http_source + location.flag; // concatenate the source and flag
+        img.alt = location.flag + " Flag"; // add alt text for accessibility
 
-    GRID_CONTAINER.style.display = "grid";
-    GRID_CONTAINER.style.gridTemplateColumns = "auto auto";
-    GRID_CONTAINER.style.gridTemplateRows = "256px";
+        // Add "p" HTML tag for the description
+        var description = document.createElement("p");
+        description.textContent = location.description; // extract the description
 
-    for (var i = 0; i < FLAG_COUNT; i++) {
-        var placeContainer = document.createElement("div");
-        placeContainer.style.border = "2px dashed";
-        placeContainer.style.padding = "8px"
+        // Add "p" HTML tag for the greeting
+        var greeting = document.createElement("p");
+        greeting.textContent = location.greeting;  // extract the greeting
 
-        placeContainer.id = "placeContainer";
+        // Append img and p HTML tags to the grid item DIV
+        gridItem.appendChild(img);
+        gridItem.appendChild(description);
+        gridItem.appendChild(greeting);
 
-        var flagImage = document.createElement("img");
-        flagImage.src = FLAGS[i].Flag_Img;
-        flagImage.alt = FLAGS[i].Name;
-        flagImage.objectFit = "contain";
-        flagImage.style.width = "100%";
-        flagImage.style.height = "90%";
-
-        placeContainer.appendChild(flagImage);
-
-        var textDiv = document.createElement("p");
-        textDiv.style.textAlign = "center";
-        textDiv.textContent = FLAGS[i].Name;
-
-        placeContainer.appendChild(textDiv);
-
-        GRID_CONTAINER.appendChild(placeContainer);
+        // Append the grid item DIV to the container DIV
+        container.appendChild(gridItem);
     }
-
-    // Add containter to output 
-    GRID_CONTAINER.appendChild(container);
 </script>
 
-<comment>
-This is a project I worked on in blender, a 3d modeling software
-</comment>
+### Journey through Life
 
-<div .class = "image-gallery">
-<img .src = "C:\Users\digit\OneDrive\Pictures\Screenshots 1\Screenshot 2026-07-05 211048.png"></img>
+Here is what I did at those places
+
+- 🏫 Lots of Elementary Schools in Tucson, LA, Honolulu, and Glendale (CA)
+- 🏫 Middle and High School in Glendale (CA), Hoover High graduated '77
+- 🎓 Glendale CA Community College, UCLA Extension, LA Wilshire Computer Tech School '77 to '79
+- ⛪ England, London Missionary for Church of Jesus Christ of Latter-day Saints '79 to '81
+- 💼 Culver City, Glendale CA founder at Ashton-Tate, original PC's dBase 2 and 3 '82 to '87
+- 🎓 Eugene Oregon Undergraduate CompSci Degree at University of Oregon (Go Ducks!) '89 to '91
+- 💼 Eugene Oregon, founder and owner @ Microniche `88, Point Control CAD CAM developer '91 to '96
+- 🏢 San Diego CA Qualcomm, Satellite Comm and 1st Mobile OS (BREW) '96 to '19
+- 👨‍🏫 San Diego CA Teacher of Computer Science @ Del Norte High School San Diego '19 to present
+
+### Culture, Family, and Fun
+
+Everything for me, as for many others, revolves around family and faith.
+
+- My mother told me that I was Danish, English. and Irish, here is my researched [family tree]({{site.baseurl}}/images/about/familytree.png)
+- My family is pretty big as I have been married twice, my 1st wife passed away.  We have had 5 kids, 4 adopted by me, 1 biological.  Plus, there are three grandkids.  My name to my grandkids is Abuilito.
+- The gallery of pics has some of my family, fun, culture and faith memories.
+
+<comment>
+Gallery of Pics, scroll to the right for more ...
+</comment>
+<div class="image-gallery">
+  <img src="{{site.baseurl}}/images/about/missionary.jpg" alt="Image 1">
+  <img src="{{site.baseurl}}/images/about/john_tamara.jpg" alt="Image 2">
+  <img src="{{site.baseurl}}/images/about/tamara_fam.jpg" alt="Image 3">
+  <img src="{{site.baseurl}}/images/about/surf.jpg" alt="Image 4">
+  <img src="{{site.baseurl}}/images/about/john_lora.jpg" alt="Image 5">
+  <img src="{{site.baseurl}}/images/about/lora_fam.jpg" alt="Image 6">
+  <img src="{{site.baseurl}}/images/about/lora_fam2.jpg" alt="Image 7">
+  <img src="{{site.baseurl}}/images/about/pj_party.jpg" alt="Image 8">
+  <img src="{{site.baseurl}}/images/about/trent_family.png" alt="Image 9">
+  <img src="{{site.baseurl}}/images/about/claire.jpg" alt="Image 10">
+  <img src="{{site.baseurl}}/images/about/grandkids.jpg" alt="Image 11">
+  <img src="{{site.baseurl}}/images/about/farm.jpg" alt="Image 12">
 </div>
