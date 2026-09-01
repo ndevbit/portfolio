@@ -17,7 +17,7 @@ That about encompasses my experience in coding so far, minus a few projects here
 
 ## Important places for me
 
-Here are the 2 U.S. states I know were significant to my life, a long with the 2 countries of which I derive my heritage (Poland and Mexico).
+Here are the 2 U.S. states I know where significant to my life, a long with the 2 countries of which I derive my heritage (Poland and Mexico).
 
 <comment>
 Flags are from Wikipedia images
@@ -90,11 +90,11 @@ Flags are from Wikipedia images
     GRID_CONTAINER.style.border = "2px dashed";
     GRID_CONTAINER.style.padding = "8px";
     // GRID_CONTAINER.style.width = "512px";
-    GRID_CONTAINER.style.height = "256px";
+    GRID_CONTAINER.style.height = "512px";
 
     GRID_CONTAINER.style.display = "grid";
-    GRID_CONTAINER.style.gridTemplateColumns = "auto auto auto auto";
-    GRID_CONTAINER.style.gridTemplateRows = "128px";
+    GRID_CONTAINER.style.gridTemplateColumns = "auto auto";
+    GRID_CONTAINER.style.gridTemplateRows = "256px";
 
     for (var i = 0; i < FLAG_COUNT; i++) {
         var placeContainer = document.createElement("div");
@@ -108,7 +108,7 @@ Flags are from Wikipedia images
         flagImage.alt = FLAGS[i].Name;
         flagImage.objectFit = "contain";
         flagImage.style.width = "100%";
-        flagImage.style.height = "80%";
+        flagImage.style.height = "90%";
 
         placeContainer.appendChild(flagImage);
 
