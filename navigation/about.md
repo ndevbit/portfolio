@@ -7,7 +7,7 @@ comments: true
 
 ### Coding progression
 
-I started with scratch many years ago, where I remained for around 3 years.
+I started with scratch many years ago, where I remained for around 3 years.xxx
 There where sprinkles of JavaScript and Luau, but Scratch was the dominant coding language for me.
 
 Eventually I moved on to C, and then Armv7 assembly.
