@@ -11,7 +11,7 @@ I started with scratch many years ago, where I remained for around 3 years.
 There where sprinkles of JavaScript and Luau, but Scratch was the dominant coding language for me.
 
 Eventually I moved on to C, and then Armv7 assembly.
-I had a lot of fun with the Armv7 assembly, and it taught me alot about the inner workings of computers.
+I had a lot of fun with Armv7 assembly, and it taught me alot about the inner workings of computers.
 
 That about encompasses my experience in coding so far, minus a few projects here and there.
 
@@ -130,7 +130,7 @@ Flags are from Wikipedia images
 <comment>
 Here are some things I've worked on in the past. Some of them are in Blender, a 3D modeling software.
 
-One of them is of a computer I was working on in Roblox Studio, although I have since stopped using the software
+One of them is of a computer I was working on in Roblox Studio, although I have since stopped using the software.
 </comment>
 
 <div class="image-gallery">
