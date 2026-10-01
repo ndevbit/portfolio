@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: post 
 title: Portfolio Home 2
 hide: true
@@ -220,4 +220,4 @@ Simple curve: M2 10 C4 2, 12 2, 14 10
     status.textContent = 'Drag a part to its slot.';
   });
 })();
-</script>
+</script> -->
