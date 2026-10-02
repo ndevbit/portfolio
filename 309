@@ -1,0 +1,15 @@
+Link: ==============
+
+https://ndevbit.github.io/portfolio/python/developing-algorithms-hw
+
+MCQ Check: ==============
+
+MCQ 3.09: 4/4 | answers: C,B,C,B
+
+HW Output: ==============
+
+Restock needed:
+Blankets: need 12
+Shampoo: need 10
+Total items needed 22
+Most urgent: Blankets (short by 12)
