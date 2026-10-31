@@ -1,0 +1,51 @@
+Settings are listed in order of priority. The top value will be used.
+path
+Set for your local app (/home/digit/wa005da8ff/portfolio/.bundle/config): "vendor/bundle"
+
+---
+BUNDLE_PATH: "vendor/bundle"
+/home/digit/.rbenv/shims/ruby
+/home/digit/.rbenv/shims/ruby
+/usr/bin/ruby
+/bin/ruby
+/home/digit/.rbenv/shims/bundle
+/opt/gems/bin/bundle
+/home/digit/.rbenv/shims/bundle
+/opt/gems/bin/bundle
+/usr/local/bin/bundle
+/opt/gems/bin/jekyll
+/opt/gems/bin/jekyll
+/usr/local/bin/jekyll
+#!/usr/bin/env ruby3.3
+3:LOG_FILE = /tmp/jekyll$(PORT).log
+31:	watch-notebooks watch-projects watch-files bundle-install jekyll-serve \
+99:			echo $$(date +%s) > /tmp/.jekyll_regenerating; \
+101:			rm -f /tmp/.jekyll_regenerating; \
+115:		if [ -f /tmp/.jekyll_regenerating ]; then \
+116:			START=$$(cat /tmp/.jekyll_regenerating); \
+254:serve-current: stop build-registered-projects convert split-courses build-registered-docs jekyll-serve
+264:	@bundle install
+267:	@bundle exec jekyll clean
+268:	@bundle exec jekyll build
+365:	@rm -f $(LOG_FILE) /tmp/.notebook_watch_marker /tmp/.project_watch_marker /tmp/.jekyll_regenerating /tmp/.jekyll_rebuild_trigger /tmp/.jekyll_rebuild_done /tmp/.jekyll_rebuild_log
+382:		if [ -f /tmp/.jekyll_rebuild_trigger ]; then \
+383:			TRIGGER_TIME=$$(stat -f %m /tmp/.jekyll_rebuild_trigger 2>/dev/null || stat -c %Y /tmp/.jekyll_rebuild_trigger); \
+387:				NEW_TRIGGER=$$(stat -f %m /tmp/.jekyll_rebuild_trigger 2>/dev/null || stat -c %Y /tmp/.jekyll_rebuild_trigger); \
+391:					rm -f /tmp/.jekyll_rebuild_done; \
+392:					(bundle exec jekyll build --incremental > /tmp/.jekyll_rebuild_log 2>&1; touch /tmp/.jekyll_rebuild_done) & \
+395:					while [ ! -f /tmp/.jekyll_rebuild_done ]; do \
+404:					tail -1 /tmp/.jekyll_rebuild_log; \
+414:# Runs in background - use 'make stop' to stop, 'tail -f /tmp/jekyll4500.log' to view logs
+420:	@$(MAKE) jekyll-serve ORIGINAL_GOALS="$(ORIGINAL_GOALS)"
+443:			touch /tmp/.jekyll_rebuild_trigger; \
+468:				touch /tmp/.jekyll_rebuild_trigger; \
+475:# Bundle install (dependency for jekyll-serve)
+476:bundle-install:
+477:	@if [ ! -f .bundle/install_marker ] || [ Gemfile -nt .bundle/install_marker ] || [ Gemfile.lock -nt .bundle/install_marker ]; then \
+478:		bundle install; \
+479:		mkdir -p .bundle && touch .bundle/install_marker; \
+484:jekyll-serve: bundle-install
+486:	@rm -f /tmp/.jekyll_rebuild_trigger
+487:	bundle exec jekyll serve -H $(HOST) -P $(PORT) --no-watch > $(LOG_FILE) 2>&1 &
+BUNDLED_DEBUGPY_PATH=/home/digit/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy
+PATH=/home/digit/wa005da8ff/ComputerScienceDudes/cs_frontend/venv/bin:/home/digit/.rbenv/shims:/snap/bin:/opt/gems/bin:/home/digit/.vscode-server/bin/e646868227c3e3a9e3f24277c8c7220be42c0be7/bin/remote-cli:/home/digit/.local/bin:/home/digit/.rbenv/shims:/snap/bin:/opt/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/digit/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/digit/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/digit/Downloads/Apps/MSYS2/ucrt64/bin:/mnt/c/Users/digit/AppData/Local/Programs/Microsoft VS Code/bin/copilot-shim:/snap/bin:/home/digit/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts:/home/digit/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/digit/.vscode-server/bin/e646868227c3e3a9e3f24277c8c7220be42c0be7/bin/copilot-shim

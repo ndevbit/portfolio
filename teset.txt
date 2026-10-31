@@ -1,0 +1,2 @@
+/home/digit/.bashrc:119:export GEM_HOME="/opt/gems"
+/home/digit/.bashrc:120:export PATH="/opt/gems/bin:$PATH"
