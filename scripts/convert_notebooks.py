@@ -1316,7 +1316,7 @@ def process_notebook(notebook_file):
 
 def convert_notebooks():
     """Convert all notebooks in parallel while reporting progress."""
-    maxCores = os.cpu_count()  # get the number of cores available on the system
+    maxCores = 1  # get the number of cores available on the system
 
     notebook_files = glob.glob(f"{notebook_directory}/**/*.ipynb", recursive=True)
 
