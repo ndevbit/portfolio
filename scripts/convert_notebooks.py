@@ -1315,34 +1315,41 @@ def process_notebook(notebook_file):
 
 
 def convert_notebooks():
-    """Convert all notebooks in parallel while reporting progress."""
-    maxCores = 1  # get the number of cores available on the system
-
+    """Convert notebooks; run serially in CI to avoid process-pool failures."""
     notebook_files = glob.glob(f"{notebook_directory}/**/*.ipynb", recursive=True)
 
-    # create progress bar
     convertBar = ProgressBar(
-        userInfo="Notebook conversion progress:", total=(len(notebook_files))
+        userInfo="Notebook conversion progress:", total=len(notebook_files)
     )
 
-    with concurrent.futures.ProcessPoolExecutor(max_workers=maxCores) as executor:
-        futures = {
-            executor.submit(process_notebook, notebook_file): notebook_file
-            for notebook_file in notebook_files
-        }
-
-        for future in concurrent.futures.as_completed(futures):
-            notebook_file = futures[future]
+    if os.environ.get("CI", "").lower() == "true":
+        for notebook_file in notebook_files:
             try:
-                future.result()
-            except Exception as e:
-                print(
-                    f"Error occurred during notebook processing: {notebook_file}\n{traceback.format_exc()}"
-                )
+                process_notebook(notebook_file)
             finally:
                 rel_path = os.path.relpath(notebook_file, notebook_directory)
                 convertBar.set_suffix(rel_path)
                 convertBar.continue_progress()
+    else:
+        with concurrent.futures.ProcessPoolExecutor(max_workers=1) as executor:
+            futures = {
+                executor.submit(process_notebook, notebook_file): notebook_file
+                for notebook_file in notebook_files
+            }
+
+            for future in concurrent.futures.as_completed(futures):
+                notebook_file = futures[future]
+                try:
+                    future.result()
+                except Exception:
+                    print(
+                        f"Error occurred during notebook processing: "
+                        f"{notebook_file}\n{traceback.format_exc()}"
+                    )
+                finally:
+                    rel_path = os.path.relpath(notebook_file, notebook_directory)
+                    convertBar.set_suffix(rel_path)
+                    convertBar.continue_progress()
 
     convertBar.end_progress()
 
